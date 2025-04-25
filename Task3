@@ -1,0 +1,12 @@
+#include<stdio.h>
+static int count = 0;
+void call_function(){
+    count++;
+}
+int main(){
+    call_function();
+    call_function();
+    call_function();
+    printf("funkciayi kancheri qanaky: %d\n",count);
+    return 0;
+}
