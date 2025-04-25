@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+typedef struct{
+    int day;
+    int month;
+    int year;
+}Date;
+
+int dateDifference(Date d1,Date d2) {
+    int res1 = (d1.day) + (d1.month * 30) + (d1.year * 365);
+    int res2 = (d2.day) + (d2.month * 30) + (d2.year * 365);
+    return res1 - res2;
+}
+int main(){
+    Date d1;
+    Date d2;
+    printf("input day,month,year:\n");
+    scanf("%d %d %d",&d1.day,&d1.month,&d1.year);
+    printf("input day,month,year:\n");
+    scanf("%d %d %d",&d2.day,&d2.month,&d2.year);
+    int count = dateDifference(d1,d2);
+    printf("result: %d\n",count);
+    return 0;
+
+}
+
