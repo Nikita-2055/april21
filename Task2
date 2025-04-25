@@ -1,0 +1,39 @@
+#include<stdio.h>
+typedef struct{
+    int accountNumber;
+    char holderName[50];
+    float balance;
+}BankAccount;
+
+
+void deposit(BankAccount *user, float amount){
+    printf("before deposit:  ");
+    printf("%.2f\n",user->balance);
+    user->balance = user->balance + amount;
+    printf("afther deposit:  ");
+    printf("%.2f\n",user->balance);
+}
+void withdraw(BankAccount *user, float amount){
+    printf("before withdraw:  ");
+    printf("%.2f\n",user->balance);
+    user->balance = user->balance - amount;
+    printf("afther withdraw:  ");
+    printf("%.2f\n",user->balance);
+}
+void displayAccount(BankAccount user){
+    deposit(&user,5000);
+    withdraw(&user,8000);
+}
+
+
+int main(){
+    BankAccount user;
+    printf("input your name:");
+    scanf("%s",user.holderName);
+    printf("input your accountnumber:");
+    scanf("%d",&user.accountNumber);
+    printf("input your balance:");
+    scanf("%f",&user.balance);
+    displayAccount(user);
+    return 0;
+}
