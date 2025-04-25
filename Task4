@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<stdbool.h>
+bool is_prime(int n){
+    if(n <= 1){
+        return false;
+    }
+    for(int i = 2; i * i <= n; i++){
+        if(n % i == 0){
+            return false;
+        }
+    }
+    return true;
+}
+
+void next_prime(){
+    static int n = 1;
+    while(1){
+        n++;
+        if(is_prime(n)){
+            printf("next prime number is: %d\n",n);
+            return ;
+        }
+    }
+
+}
+
+
+int main(){
+    next_prime();
+    next_prime();
+    next_prime();
+    return 0;
+}
